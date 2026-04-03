@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LVS Web Designer | Luxury Design</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: #f5f0e6; color: #333; overflow-x: hidden; }
+
+    header { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background: #e8dfd3; position: sticky; top: 0; z-index: 1000; }
+    header h1 { font-family: 'Orbitron', sans-serif; font-size: 2rem; letter-spacing: 2px; color: #bfa57a; }
+    header nav a { margin-left: 30px; text-decoration: none; color: #333; font-weight: 500; transition: 0.3s; }
+    header nav a:hover { color: #bfa57a; }
+
+    .hero { height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg,#f5f0e6,#e8dfd3); }
+    .hero h2 { font-size: 3rem; color: #bfa57a; margin-bottom: 20px; animation: glow 2s infinite alternate; }
+    .hero p { font-size: 1.5rem; max-width: 600px; margin-bottom: 40px; color: #555; }
+    .hero button { padding: 15px 35px; font-size: 1rem; border: none; cursor: pointer; background: #bfa57a; color: #fff; font-weight: bold; transition: 0.3s; }
+    .hero button:hover { transform: scale(1.1); background: #d1b783; }
+
+    @keyframes glow { 0% { text-shadow: 0 0 5px #bfa57a; } 100% { text-shadow: 0 0 25px #bfa57a; } }
+
+    .services { padding: 80px 50px; display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 40px; }
+    .service-card { background: #fffaf0; border-radius: 15px; padding: 30px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+    .service-card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(191,165,122,0.3); }
+    .service-card h3 { color: #bfa57a; margin-bottom: 15px; }
+    .service-card p { font-size: 1rem; line-height: 1.5; color: #555; }
+
+    .contact { background: #e8dfd3; padding: 80px 50px; text-align: center; }
+    .contact h2 { color: #bfa57a; margin-bottom: 20px; }
+
+    /* FORM STYLING */
+    form { max-width: 500px; margin: 30px auto; display: flex; flex-direction: column; gap: 15px; }
+    input, textarea {
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-family: 'Poppins';
+    }
+    button.submit-btn {
+        background: #bfa57a;
+        color: white;
+        border: none;
+        padding: 12px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    button.submit-btn:hover {
+        background: #d1b783;
+    }
+
+    footer { background: #e8dfd3; text-align: center; padding: 30px 50px; font-size: 0.9rem; color: #777; }
+
+    @media(max-width:768px) {
+        header { flex-direction: column; }
+        header nav { margin-top: 10px; }
+        .hero h2 { font-size: 2.5rem; }
+        .hero p { font-size: 1.2rem; }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>LVS Web Designer</h1>
+    <nav>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Luxury Design & Digital Excellence</h2>
+    <p>Professional Logo Design, Website Design, and Account Management tailored to elevate your brand.</p>
+    <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">Get in Touch</button>
+</section>
+
+<section id="services" class="services">
+    <div class="service-card">
+        <h3>Logo Design</h3>
+        <p>Create a stunning and memorable logo that captures your brand’s identity with precision and style.</p>
+    </div>
+    <div class="service-card">
+        <h3>Website Design</h3>
+        <p>Luxury, responsive websites designed to engage users and convert visitors into clients seamlessly.</p>
+    </div>
+    <div class="service-card">
+        <h3>Account Management</h3>
+        <p>Professional account management services to handle your brand presence efficiently and effectively.</p>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Contact LVS Web Designer</h2>
+
+    <!-- FORM SPREE FORM -->
+    <form action="https://formspree.io/f/xykbdgwd" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+
+    <p>Phone: <a href="tel:+15622095123">562-209-5123</a></p>
+   
+<footer>
+    &copy; 2026 LVS Web Designer. All rights reserved.
+</footer>
+
+<script>
+    document.querySelectorAll('header nav a').forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const target = document.querySelector(link.getAttribute('href'));
+            target.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
+
+</body>
+</html>
